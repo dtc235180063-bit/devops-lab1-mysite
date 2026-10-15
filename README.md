@@ -1,2 +1,8 @@
-# devops-lab1-mysite
-Lab 1 — DevOps Course: My First CI/CD Pipeline
+# \# DevOps Lab 1
+
+# Họ tên: Nguyễn Văn Hải
+
+# Mã sinh viên: dtc235180063
+
+# Lớp: KTPMK22C
+
