@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Lab 1 — Nguyễn Văn Hải (DTC235180063)</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --secondary: #7c3aed;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-bg: #ffffff;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --accent-green: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-dark);
+            padding: 24px 16px;
+        }
+
+        .container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 680px;
+            width: 100%;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 17px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px 22px;
+        }
+
+        .card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .info-row strong {
+            color: var(--text-dark);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            color: #15803d;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        .badges-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .badge {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            background: #c7d2fe;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            background: #f1f5f9;
+            padding: 14px 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            overflow-x: auto;
+        }
+
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .step-arrow {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avatar-box">🚀</div>
+        <h1>Xin chào, Tôi là Nguyễn Văn Hải!</h1>
+        <h2>DevOps Lab 1 — Trải nghiệm DevOps Workflow End-to-End</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>📋 Thông tin sinh viên & Học phần</h3>
+                <div class="info-row">
+                    <span>Họ và tên:</span>
+                    <strong>Nguyễn Văn Hải</strong>
+                </div>
+                <div class="info-row">
+                    <span>Mã sinh viên:</span>
+                    <strong>DTC235180063</strong>
+                </div>
+                <div class="info-row">
+                    <span>Lớp:</span>
+                    <strong>KTPMK22C</strong>
+                </div>
+                <div class="info-row">
+                    <span>Khoa / Trường:</span>
+                    <strong>Công nghệ Thông tin — ICTU</strong>
+                </div>
+                <div class="info-row">
+                    <span>Học phần:</span>
+                    <strong>Vận hành và Bảo trì Phần mềm (2026)</strong>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ Trạng thái Triển khai (CI/CD Pipeline)</h3>
+                <div class="info-row">
+                    <span>Pipeline Runner:</span>
+                    <strong>GitHub Actions (Ubuntu Latest)</strong>
+                </div>
+                <div class="info-row">
+                    <span>Hosting Platform:</span>
+                    <strong>GitHub Pages (Branch: gh-pages)</strong>
+                </div>
+                <div class="info-row">
+                    <span>Pipeline Status:</span>
+                    <span class="status-badge"><span class="status-dot"></span> Automated 100%</span>
+                </div>
+                <div class="info-row">
+                    <span>Thời điểm build:</span>
+                    <strong id="deploy-date">Đang cập nhật...</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow-steps">
+            <div class="step-item"><span>📝 Plan</span></div>
+            <span class="step-arrow">→</span>
+            <div class="step-item"><span>💻 Code</span></div>
+            <span class="step-arrow">→</span>
+            <div class="step-item"><span>⚙️ Build</span></div>
+            <span class="step-arrow">→</span>
+            <div class="step-item"><span>🧪 Test</span></div>
+            <span class="step-arrow">→</span>
+            <div class="step-item"><span>🚀 Deploy</span></div>
+            <span class="step-arrow">→</span>
+            <div class="step-item"><span>📊 Monitor</span></div>
+        </div>
+
+        <div class="badges-wrapper">
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">CI/CD Pipeline</span>
+            <span class="badge">GitHub Pages</span>
+            <span class="badge">DevOps Lifecycle</span>
+            <span class="badge">Automation</span>
+        </div>
+
+        <div class="footer">
+            <p>Trang web được triển khai tự động mỗi khi commit và push code lên nhánh <code>main</code>.</p>
+            <p>🔄 <strong>Push code → CI Build & Validate → Auto Deploy → Live!</strong> 🌐</p>
+            <p style="margin-top: 8px;">
+                Kho lưu trữ: <a href="https://github.com/dtc235180063-bit/devops-lab1-mysite" target="_blank">github.com/dtc235180063-bit/devops-lab1-mysite</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const now = new Date();
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        };
+        document.getElementById('deploy-date').textContent = now.toLocaleDateString('vi-VN', options);
+    </script>
+</body>
+</html>
